@@ -10,13 +10,15 @@ public class Serie extends Media {
 	private static final long serialVersionUID = 1L;
 	private int nbEpisode;
 	private List<Integer> episodes;
-	
-	public Serie(Integer id, String name, String description, List<Country> country, boolean active) {
-		super(id, name, description, country, active);
+
+	public Serie(Integer id, String name, String description, List<Country> country, boolean active,
+			List<Integer> posters) {
+		super(id, name, description, country, active, posters);
 	}
-	
-	public Serie(Integer id, String name, String description, List<Country> country, boolean active, List<Integer> episodes) {
-		super(id, name, description, country, active);
+
+	public Serie(Integer id, String name, String description, List<Country> country, boolean active,
+			List<Integer> posters, List<Integer> episodes) {
+		super(id, name, description, country, active, posters);
 		this.episodes = episodes;
 		this.nbEpisode = episodes.size();
 	}
@@ -36,5 +38,5 @@ public class Serie extends Media {
 	public void setEpisodes(List<Integer> episodes) {
 		this.episodes = episodes;
 	}
-	
+
 }

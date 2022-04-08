@@ -20,13 +20,17 @@ public class Media implements Serializable {
 	private String description;
 	private List<Country> country;
 	private boolean active;
-	
-	public Media(Integer id, String name, String description, List<Country> country, boolean active) {
+	private List<Integer> posters;
+
+	public Media(Integer id, String name, String description, List<Country> country, boolean active,
+			List<Integer> posters) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.country = country;
 		this.active = active;
+		this.posters = posters;
 	}
 
 	public Integer getId() {
@@ -67,6 +71,14 @@ public class Media implements Serializable {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	public List<Integer> getPosters() {
+		return posters;
+	}
+
+	public void setPosters(List<Integer> posters) {
+		this.posters = posters;
 	}
 	
 }
