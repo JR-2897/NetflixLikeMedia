@@ -28,7 +28,8 @@ public class MediaController {
 	
 	RestTemplate restTemplate = new RestTemplate();
 
-	String urlUser = "http://localhost:8081/";
+	//String urlUser = "http://localhost:8081/";
+	String urlUser = "http://user-webservice-app:8081/";
 	
 	@GetMapping("/")
 	public ResponseEntity<List<Media>> getAllMedia(@RequestBody int idUser) throws JsonProcessingException {

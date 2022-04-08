@@ -38,7 +38,8 @@ public class SerieController {
 
 	RestTemplate restTemplate = new RestTemplate();
 
-	String urlUser = "http://localhost:8081/";
+	//String urlUser = "http://localhost:8081/";
+	String urlUser = "http://user-webservice-app:8081/";
 
 	@PostMapping("/series/{idUser}")
 	public ResponseEntity<List<Serie>> getAllSerie(@PathVariable int idUser, @RequestBody Country country)

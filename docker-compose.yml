@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  app:
+    container_name: media-webservice-app
+    image: media-webservice-app
+    build: ./
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongodb
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://RootUser:RootPass@mongodb/mediaDB?authSource=admin
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - data:/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=RootUser
+      - MONGO_INITDB_ROOT_PASSWORD=RootPass
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 8083:8083
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=RootUser
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=RootPass
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+volumes:
+  data: {}
+networks:
+  default:
+    name: mongodb_network

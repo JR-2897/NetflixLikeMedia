@@ -37,7 +37,8 @@ public class MovieController {
 
 	RestTemplate restTemplate = new RestTemplate();
 
-	String urlUser = "http://localhost:8081/";
+	//String urlUser = "http://localhost:8081/";
+	String urlUser = "http://user-webservice-app:8081/";
 
 	@GetMapping("/movies/{idUser}")
 	public ResponseEntity<List<Movie>> getAllMovie(@PathVariable int idUser, @RequestBody Country country)

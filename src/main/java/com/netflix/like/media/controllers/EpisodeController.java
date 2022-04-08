@@ -31,8 +31,9 @@ public class EpisodeController {
 
 	RestTemplate restTemplate = new RestTemplate();
 
-	String urlUser = "http://localhost:8081/";
-
+	//String urlUser = "http://localhost:8081/";
+	String urlUser = "http://user-webservice-app:8081/";
+	
 	@PostMapping("/episodes/{nameEpisode}")
 	public ResponseEntity<Episode> getEpisodeByName(@PathVariable String nameEpisode, @RequestBody int idUser)
 			throws JsonProcessingException {
